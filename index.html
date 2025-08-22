@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="title">Hong Hui Ventures Capital Ltd</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./public/assets/fav-logo-removebg.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <!-- gilroy font -->
+    <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            font-family: "IBM Plex Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        body p {
+            font-weight: 350;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        p {
+            color: #000000 !important;
+            font-size: 15px !important;
+            line-height: 1.7;
+            letter-spacing: .3px;
+        }
+
+        .navbar {
+            height: 100vh;
+            width: 220px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ffffff;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .sidehead {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .sidecontent {
+            width: 220px;
+            padding: 0.5rem;
+            position: fixed;
+            top: 130px;
+        }
+
+        .nav {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: 0;
+        }
+
+        .logo {
+            height: 40px;
+            width: 140px;
+            position: fixed;
+            top: 82px;
+            margin-left: 20px;
+        }
+
+        .nav-link {
+            font-size: 15px !important;
+            padding: 0.5rem 1rem;
+            color: #000000 !important;
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+        .nav-link:focus,
+        .nav-link:target,
+        .nav-link.active {
+            background-color: #eaeaea !important;
+            border-radius: 7px;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 1rem;
+        }
+
+        .content-portfolio {
+            margin-left: 130px;
+            padding: 1rem;
+        }
+
+        .hamburger {
+            display: none;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: none;
+            border: none;
+            color: #000000;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        @media (max-width: 991px) {
+            .navbar {
+                left: -250px;
+            }
+
+            .navbar.open {
+                left: 0;
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            .content-portfolio {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .sidehead {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .close-btn {
+                background: none;
+                border: none;
+                color: #000000;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: auto !important;
+                object-fit: cover;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin: 1rem 0;
+            }
+
+            .section-title {
+                padding-left: 0;
+                justify-content: center;
+                text-align: center;
+                padding-top: 1.5rem;
+                padding-bottom: 1rem;
+            }
+
+            #creatingimpact .col-md-6,
+            #ourportfolio .col-md-6,
+            #whoweare .col-md-6 {
+                width: 100%;
+                padding: 1rem !important;
+                text-align: start !important;
+            }
+
+            #creatingimpact img,
+            #ourportfolio img,
+            #whoweare img {
+                width: 100% !important;
+                height: auto !important;
+                max-height: 300px;
+                object-fit: cover;
+                margin: 0 auto;
+            }
+
+            #creatingimpact h2,
+            #ourportfolio h2,
+            #whoweare h2 {
+                text-align: center !important;
+                margin: 1rem 0 !important;
+            }
+
+            #creatingimpact .text-dark,
+            #ourportfolio .text-dark,
+            #whoweare .text-dark {
+                text-align: center !important;
+            }
+
+            #wherewefocus .row {
+                margin-bottom: 1rem !important;
+            }
+
+            #wherewefocus .col-5,
+            #wherewefocus .col-7 {
+                padding: 0.5rem;
+            }
+
+            #wherewefocus img {
+                width: 100% !important;
+                height: 150px !important;
+                object-fit: cover;
+            }
+
+            #wherewefocus .grid-card {
+                padding-bottom: 1rem;
+            }
+
+            .highlight-card {
+                padding: 2rem 1rem;
+            }
+
+            .highlight-card h2 {
+                font-size: 1.8rem;
+                padding-bottom: 0.5rem;
+            }
+
+            .highlight-card p {
+                font-size: 0.9rem;
+                text-align: center;
+                max-width: 90%;
+            }
+
+            .hero .container {
+                margin: 1rem auto !important;
+            }
+
+            .footer .col-md-3 {
+                text-align: left;
+                margin-bottom: 1rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-icons {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar {
+                left: 0;
+            }
+
+            .close-btn {
+                display: none;
+            }
+
+            #creatingimpact .row,
+            #ourportfolio .row,
+            #whoweare .row {
+                align-items: center;
+            }
+
+            #creatingimpact .col-md-6,
+            #ourportfolio .col-md-6,
+            #whoweare .col-md-6 {
+                width: 50%;
+                padding: 2rem;
+            }
+
+            #creatingimpact img,
+            #ourportfolio img,
+            #whoweare img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+                margin: 0;
+            }
+
+            #creatingimpact h2,
+            #ourportfolio h2,
+            #whoweare h2 {
+                text-align: start;
+                margin: 2rem 0 !important;
+            }
+
+            #creatingimpact .text-dark,
+            #ourportfolio .text-dark,
+            #whoweare .text-dark {
+                text-align: start !important;
+            }
+
+            .section-title {
+                padding-left: 25px;
+                justify-content: flex-start;
+                text-align: left;
+                padding-top: 0;
+                padding-bottom: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 64px;
+            }
+
+            .hero .container {
+                margin: 40px auto !important;
+            }
+
+            .highlight-card {
+                padding: 75px 0px;
+            }
+
+            .highlight-card p {
+                font-size: 17px;
+            }
+
+            .footer .col-md-3 {
+                text-align: left;
+            }
+
+            #wherewefocus img {
+                width: 100% !important;
+                height: 500px !important;
+                object-fit: cover;
+            }
+        }
+
+        .section-title {
+            color: #000000;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            padding-left: 25px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .section-think {
+            color: #000000;
+            font-weight: 500;
+            padding-left: 25px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #c4c4c4;
+            border-radius: 0.75rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .navbar-brand {
+            color: #000000 !important;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .hero {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #000000, #484848);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #000000;
+        }
+
+        .hero-image {
+            width: 75%;
+            height: fit-content;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .modern-card {
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modern-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .modern-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem;
+        }
+
+        .grid-card {
+            border-radius: 0.5rem;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .grid-card h3 {
+            font-size: 1.3rem;
+            color: #000000;
+        }
+
+        .grid-card p {
+            color: #000000;
+        }
+
+        .checkbutton {
+            border: none;
+            background-color: #f3f3f3;
+            border-radius: 25px;
+            padding: 10px 15px;
+        }
+
+        .highlight-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 10px;
+            height: auto;
+            background-color: #fafafa;
+            padding: 75px 0px;
+            margin: 25px 0px;
+            overflow: hidden;
+        }
+
+        .highlight-card h2 {
+            font-size: 32px;
+            padding-bottom: 25px;
+            text-align: center;
+        }
+
+        .highlight-card p {
+            font-size: 17px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            padding: 2rem 0;
+            font-size: 0.9rem;
+            color: #595a5c;
+        }
+
+        .footer a {
+            color: #000000;
+            /* font-size: larger; */
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .footer h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #8d8d8d;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.5rem;
+            /* padding-top: 10px; */
+            color: #000000;
+        }
+
+        .social-icons a {
+            font-size: 1.2rem;
+            margin: 0 8px;
+            color: #000000;
+        }
+
+        .social-icons a:hover {
+            color: #444444;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image {
+                width: 80%;
+                height: auto;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            #wherewefocus img {
+                height: 200px !important;
+            }
+        }
+
+        #creatingimpact img,
+        #ourportfolio img,
+        #whoweare img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-height: 400px;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .feature-badge {
+            background: #f3f3f3;
+            color: #000000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #000000;
+            line-height: 1.6;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        #whoweare {
+            margin-bottom: 15px;
+        }
+
+        #howwethink {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        #whatwelookfor {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        #creatingimpact {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        #wherewefocus {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        #ourportfolio {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        #ournetwork {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        #partnerwithus {
+            margin-top: 5rem;
+        }
+
+        @media (max-width: 768px) {
+            .content .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+                margin-right: 0 !important;
+            }
+        }
+
+        .custom-image-hero {
+            width: 110%;
+            height: 700px;
+            padding: 2rem;
+            border-radius: 40px;
+            object-fit: cover;
+            margin-top: -30px !important;
+            align-items: center;
+        }
+
+        .custom-image-wwlf {
+            width: 70%;
+            height: 500px;
+            padding: 2rem;
+            border-radius: 40px;
+            object-fit: cover;
+        }
+
+        .text-section {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .text-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .hero-text {
+            max-width: 50% !important;
+        }
+
+        .hero h2 {
+            padding-bottom: 30px;
+        }
+
+        .text-section p {
+            max-width: 70%;
+            margin: 10px auto 0;
+            color: #636668;
+        }
+
+        @media (max-width: 500px) {
+            .custom-image-hero {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+
+            .hero-text {
+                max-width: 100% !important;
+            }
+
+
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-height: 300px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        @media (max-width: 767px) {
+            #wherewefocus .col-12 {
+                margin-bottom: 1.5rem;
+            }
+
+            #wherewefocus .img-fluid {
+                max-height: 150px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #wherewefocus .col-md-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        }
+
+        .feature-card {
+            background: #ffffff;
+            transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px !important;
+        }
+
+        .hover {
+            text-transform: lowercase !important;
+        }
+
+        @media (max-width: 768px) {
+            #languageDropdown {
+                padding: 0.5rem 1rem;
+
+                font-size: 0.875rem;
+            }
+
+        }
+
+        @media (max-width: 426px) {
+            .langbutton {
+                gap: 1rem;
+            }
+
+            .dropdown {
+                flex: 0 0 auto;
+            }
+
+            #languageDropdown,
+            #loginDropdown {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Ensure dropdown works on click only */
+        .dropdown-menu {
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* disclaimer modal */
+
+        .modal-content {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1rem 1.5rem;
+            position: relative;
+        }
+
+        .modal-title {
+            font-weight: 500;
+            color: #000000;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #000000;
+        }
+
+        .modal-footer {
+            border-top: 1px solid #e0e0e0;
+            padding: 1rem 1.5rem;
+        }
+
+        .btn-secondary {
+            background-color: #e6e6e6;
+            color: #1e1e1e;
+            border: none;
+            border-radius: 20px;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: #9f9e9e;
+        }
+
+        @media (max-width:426px) {
+            .modal-dialog {
+                margin: 3rem;
+
+            }
+
+
+        }
+
+        /* Join Us Form Styling */
+        .join-form {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .join-form .form-group {
+            flex: 1 1 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .join-form label {
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 0.5rem;
+        }
+
+        .join-form label span {
+            color: red;
+            margin-left: 2px;
+        }
+
+        .join-form input,
+        .join-form textarea {
+            padding: 0.75rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            transition: border 0.2s;
+        }
+
+        .join-form input:focus,
+        .join-form textarea:focus {
+            border-color: #000000;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .submit-btn {
+            width: 500px;
+            background-color: #e6e6e6;
+            color: #1e1e1e;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: background-color 0.3s ease;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .submit-btn:hover {
+            background-color: #9f9e9e;
+        }
+
+        @media (max-width: 430px) {
+            .submit-btn {
+                width: 200px;
+                background-color: #e6e6e6;
+                color: #1e1e1e;
+                border: none;
+                padding: 0.75rem 2rem;
+                border-radius: 30px;
+                font-size: 1rem;
+                font-weight: 400;
+                transition: background-color 0.3s ease;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* Responsive fields */
+        @media (min-width: 768px) {
+
+            .join-form .form-group:nth-child(1),
+            .join-form .form-group:nth-child(2) {
+                flex: 1 1 calc(50% - 0.75rem);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <nav class="navbar">
+        <div class="sidehead"></div>
+        <div class="container-fluid flex-column flex-lg-row align-items-start p-lg-4 sidecontent">
+            <div class="nav" style="font-size: 14px;font-weight: 300;">
+                <a class="navbar-brand mb-2 mb-lg-4" href="#"><img class="logo"
+                        src="./public/assets/HHClogo-removebg.png" alt=""></a>
+                <a class="nav-link" href="#whoweare" onclick="handleClick('whoweare')" data-lang="nav-who-we-are">Who we
+                    are</a>
+                <a class="nav-link" href="#whatwelookfor" onclick="handleClick('whatwelookfor')"
+                    data-lang="nav-what-we-look-for">What we look for</a>
+                <a class="nav-link" href="#wherewefocus" onclick="handleClick('wherewefocus')"
+                    data-lang="nav-where-we-focus">Where we focus</a>
+                <a class="nav-link" href="#ourportfolio" onclick="handleClick('ourportfolio')"
+                    data-lang="nav-our-portfolio">Our portfolio</a>
+                <a class="nav-link" href="#partnerwithus" onclick="handleClick('partnerwithus')"
+                    data-lang="nav-partner-with-us">Partner with us</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        @media (max-width: 430px) {
+            .topbtn {
+                padding-right: 10px !important;
+                gap: 0.3rem !important;
+            }
+        }
+    </style>
+
+    <div class="content langbutton d-flex sticky-top justify-content-end topbtn pe-5"
+        style="background-color: #ffffff;">
+
+        <div class="dropdown">
+            <button class="btn bg-white nav-link border-none text-dark text-bold rounded-2 " type="button"
+                id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #e6e6e6;"
+                data-lang="language-button">English</button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item" href="#" data-lang="english">English</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="chinese">繁體中文</a></li>
+                <!-- <li><a class="dropdown-item" href="#" data-lang="japanese">Japanese</a></li> -->
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn border-0 bg-white rounded-2 nav-link" type="button" style="background-color: #e6e6e6;"
+                data-lang="language-buttons" onclick="window.location.href='login.html'">
+                Login
+            </button>
+
+
+            <!-- <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item" href="#" data-lang="english">English</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="chinese">Chinese</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="japanese">Japanese</a></li>
+            </ul> -->
+        </div>
+        <!-- <a name="" id="" class="btn text-dark text-bold rounded-pill me-3 py-2 px-4" href="#" role="button"
+            style="background-color: #e6e6e6;" data-lang="login-button">Log in</a> -->
+
+
+    </div>
+
+
+    <div class="content hero">
+        <div class="container text-center d-flex justify-content-center rounded-3 flex-column align-items-center">
+            <p class="hero-text" data-lang="hero-text">Hong Hui Ventures Capital</p>
+            <h2 style="font-weight: 500 !important; font-size: 64px;" data-lang="main-title">About</h2>
+            <div class="row">
+                <div class="col-lg-12 text-center d-flex justify-content-center imgbxo">
+                    <!-- <img src="./public/assets/newhero.jpg" alt="Full Width Image" class="custom-image-hero"
+                        style="max-width: 100%; height: 80%;"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Base styles using clamp() for fluid typography and spacing */
+        .container-img {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url('./public/assets/hero-bg-img.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: clamp(90%, 95vw, 95%);
+            border-radius: clamp(8px, 1vw, 12px);
+            min-height: 90vh;
+            margin: 0 auto;
+            padding: clamp(1rem, 2vw, 2rem);
+            overflow: hidden;
+        }
+
+        /* Updated logo sizing with clamp() for dynamic scaling */
+        .logo-cont {
+            width: clamp(200px, 40vw, 300px) !important;
+            position: absolute;
+            top: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        /* Updated slogan sizing with clamp() for fluid text */
+        .slogan {
+            position: absolute;
+            color: #102d4f;
+            font-size: clamp(20px, 3.5vw, 52px);
+            line-height: clamp(22px, 4vw, 46px);
+            text-align: center;
+            top: 38%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            width: clamp(80%, 90vw, 95%);
+            padding: 0 clamp(0.5rem, 1vw, 1rem);
+        }
+
+        /* Elements start invisible and transition to visible */
+        .image-container,
+        .slogan-container {
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        /* Class added by JavaScript to make elements visible */
+        .image-container.visible {
+            opacity: 1;
+            transition-delay: 0.5s;
+        }
+
+        .slogan-container.visible {
+            opacity: 1;
+            transition-delay: 1.5s;
+        }
+
+        /* 📱 Mobile (≤576px) */
+        @media (max-width: 576px) {
+            body {
+                /* background: lightblue; */
+            }
+
+            .container-img {
+                width: 100%;
+                min-height: 70vh;
+                padding: clamp(0.5rem, 1.5vw, 1rem);
+                border-radius: 8px;
+            }
+
+            .logo-cont {
+                width: clamp(150px, 50vw, 180px) !important;
+                top: 18%;
+            }
+
+            .slogan {
+                font-size: clamp(28px, 4vw, 48px);
+                line-height: clamp(26px, 5vw, 36px);
+                top: 38%;
+                width: 90%;
+            }
+        }
+
+        /* 📲 Tablets (577px–768px) */
+        @media (min-width: 577px) and (max-width: 768px) {
+            body {
+                /* background: lightgreen; */
+            }
+
+            .container-img {
+                width: 95%;
+                min-height: 80vh;
+                padding: clamp(0.75rem, 1.75vw, 1.5rem);
+            }
+
+            .logo-cont {
+                width: clamp(180px, 45vw, 250px) !important;
+                top: 11%;
+            }
+
+            .slogan {
+                font-size: 36px;
+                line-height: clamp(20px, 4.5vw, 36px);
+                top: 38% !important;
+                width: 85%;
+            }
+        }
+
+        /* 💻 Small Laptops (769px–992px) */
+        @media (min-width: 769px) and (max-width: 992px) {
+            body {
+                /* background: lightyellow; */
+            }
+
+            .container-img {
+                width: 95%;
+                min-height: 85vh;
+                padding: clamp(1rem, 2vw, 1.75rem);
+            }
+
+            .logo-cont {
+                width: clamp(200px, 40vw, 280px) !important;
+                top: 12%;
+            }
+
+            .slogan {
+                font-size: clamp(20px, 3.6vw, 40px);
+                line-height: clamp(22px, 4.2vw, 42px);
+                top: 35%;
+                width: 90%;
+            }
+        }
+
+        /* 🖥 Desktops (993px–1200px) */
+        @media (min-width: 993px) and (max-width: 1200px) {
+            body {
+                /* background: lightcoral; */
+            }
+
+            .container-img {
+                width: 95%;
+                min-height: 90vh;
+                padding: clamp(1rem, 2vw, 2rem);
+            }
+
+            .logo-cont {
+                width: clamp(220px, 35vw, 290px) !important;
+                top: 12%;
+            }
+
+            .slogan {
+                font-size: 48px !important;
+                line-height: clamp(24px, 4vw, 44px);
+                top: 33%;
+                width: 90%;
+            }
+        }
+
+        /* 🖥⚡ Large Desktops / 4K (1201px+) */
+        @media (min-width: 1201px) {
+            body {
+                /* background: lightgray; */
+            }
+
+            .container-img {
+                width: 95%;
+                min-height: 90vh;
+                padding: clamp(1.5rem, 2vw, 2.5rem);
+            }
+
+            .logo-cont {
+                width: clamp(250px, 30vw, 280px) !important;
+                top: 14%;
+            }
+
+            .slogan {
+                font-size: clamp(32px, 3.5vw, 42px);
+                line-height: clamp(36px, 4vw, 48px);
+                top: 38%;
+                width: 95%;
+            }
+        }
+    </style>
+
+    <div class="content">
+        <div class="container-img" id="hero-container-scroll-animation">
+            <div class="image-container">
+                <img src="./public/assets/hero-logo.png" alt="Logo" class="logo-cont">
+            </div>
+            <div class="slogan-container">
+                <div class="slogan">
+                    <span class="slogans" data-lang="hero-img-text">Preparing for a <br> new global economy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroContainer = document.getElementById('hero-container-scroll-animation');
+            const imageContainer = heroContainer.querySelector('.image-container');
+            const sloganContainer = heroContainer.querySelector('.slogan-container');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // When the element is in view, add the 'visible' class
+                        imageContainer.classList.add('visible');
+                        sloganContainer.classList.add('visible');
+                    } else {
+                        // When the element is out of view, remove the 'visible' class
+                        imageContainer.classList.remove('visible');
+                        sloganContainer.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.5 // Triggers when 50% of the element is visible
+            });
+
+            observer.observe(heroContainer);
+        });
+    </script>
+
+
+
+    <section id="whoweare" class="content" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 flex-column order-md-1">
+                    <h2 class="text-lg-start" data-lang="whoweare-title">Who we are</h2>
+                    <div class="text-dark text-start text-sm-start">
+                        <p class="text-start" data-lang="whoweare-text">Hong Hui Ventures Capital Ltd, a Hong Kong-based
+                            investment firm, focuses on scaling high-potential businesses with unrealized value. We
+                            deploy strategic capital, operational expertise, and cross-border connectivity to transform
+                            companies and deliver sustainable, long-term returns. Our strategy targets growth and
+                            special situation opportunities across Greater China, Southeast Asia, and select global
+                            markets, guided by a rigorous institutional approach and deep understanding of structural
+                            inefficiencies.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <img src="public/assets/Who-we-are-new.jpg" alt="Agile and Purposeful"
+                        class="img-fluid rounded mb-3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="howwethink" class="content">
+        <h2 class="section-title" data-lang="howwethink-title">How we think</h2>
+        <div class="card-grid">
+            <div class="grid-card text-start">
+                <img src="public/assets/Creating-Impact.jpg" alt="Disciplined Value Approach"
+                    class="img-fluid rounded mb-3" style="width: 100%; height: 250px; object-fit: cover;">
+                <h3 class='my-2' data-lang="howwethink-core-title">Core Approach</h3>
+                <p class="my-4" data-lang="howwethink-core-text">Our investment philosophy centres on a disciplined,
+                    value-driven approach,
+                    complemented by active engagement and long-term vision. </p>
+            </div>
+            <div class="grid-card text-start">
+                <img src="public/assets/Investment-Criteria.jpg" alt="Meaningful Value Creation"
+                    class="img-fluid rounded mb-3" style="width: 100%; height: 250px; object-fit: cover;">
+                <h3 class='my-2' data-lang="howwethink-criteria-title">Investment Criteria</h3>
+                <p class="my-4" data-lang="howwethink-criteria-text">We seek businesses that are either undervalued,
+                    under-managed, or positioned
+                    for transition. Each investment is assessed based on its potential for creating meaningful
+                    value, the clarity of its exit pathway, and its alignment with global sustainability goals.</p>
+            </div>
+            <div class="grid-card text-start">
+                <img src="public/assets/Execution-Strategy.jpg" alt="Agile and Purposeful"
+                    class="img-fluid rounded mb-3" style="width: 100%; height: 250px; object-fit: cover;">
+                <h3 class='my-2' data-lang="howwethink-strategy-title">Execution Strategy</h3>
+                <p class="my-4" data-lang="howwethink-strategy-text">We invest with purpose, combining agility with
+                    conviction to act decisively when
+                    opportunities emerge.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="whatwelookfor" class="content" style="margin-top: -60px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-section">
+                    <h2 style="font-weight: 500 !important;" data-lang="whatwelookfor-title">What we look for</h2>
+                    <p style="max-width: 90%;margin-bottom: 30px; margin-top: 30px !important;"
+                        data-lang="whatwelookfor-text">We focus on companies that are well-positioned to benefit from
+                        structural growth trends, such as the clean energy transition, digital innovation, and evolving
+                        consumer behaviours. Many of our targets face challenges related to ownership misalignment,
+                        succession gaps, or constrained capital structures. Others may be ready for public listing but
+                        lack the investor exposure or governance standards to proceed. Across all cases, we seek
+                        businesses that, with the proper support, can contribute to a more sustainable and inclusive
+                        economy.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center d-flex justify-content-center">
+                    <img src="./public/assets/wt-ve-look-for.webp" alt="Full Width Image" class="custom-image-hero my-2"
+                        style="max-width: 100%; height: 500px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="creatingimpact" class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 p-5 order-md-1">
+                    <h2 class="my-5 text-center text-md-start" data-lang="creatingimpact-title">Creating Impact</h2>
+                    <div class="text-dark text-start text-sm-start">
+                        <p class="text-start" data-lang="creatingimpact-text">Our model is built on partnership and
+                            action. We deliver more than capital by offering a comprehensive framework that addresses
+                            the financial, strategic, and operational dimensions of growth. This includes restructuring
+                            capital to unlock liquidity, realigning business models to sharpen competitive positioning,
+                            and integrating digital or clean technologies to enhance efficiency. Equally important, we
+                            embed environmental, social, and governance (ESG) principles into each engagement to drive
+                            long-term, responsible performance.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <img src="public/assets/cargo-ship-sailing-ocean.jpg" alt="Agile and Purposeful"
+                        class="img-fluid rounded mb-3" style="height: 350px !important;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="content" id="wherewefocus">
+        <h2 class="section-title py-3 text-start" data-lang="wherewefocus-title">Where we focus</h2>
+        <div class="container img-box d-flex flex-column justify-content-center align-items-center">
+            <div class="row">
+                <div class="col-12 col-md-4 p-3 d-flex flex-column align-items-center">
+                    <img src="public/assets/img-1-Where-we-focus.jpg" class="img-fluid rounded" alt="Energy Transition"
+                        style="width: 250px !important; height: 250px !important;">
+                    <p class="text-center mt-2 p-3" data-lang="wherewefocus-energy-text">Our recent investments reflect
+                        our commitment to future-oriented sectors and technologies.</p>
+                </div>
+                <div class="col-12 col-md-4 p-3 d-flex flex-column align-items-center">
+                    <img src="public/assets/Wwf2.png" class="img-fluid rounded" alt="Consumer Markets"
+                        style="width: 250px !important; height: 250px !important;">
+                    <p class="text-center mt-2 p-3" data-lang="wherewefocus-consumer-text">In consumer markets, we focus
+                        on platforms that promote digital lifestyle, health, and personal empowerment.</p>
+                </div>
+                <div class="col-12 col-md-4 p-3 d-flex flex-column align-items-center">
+                    <img src="public/assets/ai.png" class="img-fluid rounded" alt="AI and Blockchain"
+                        style="width: 250px !important; height: 250px !important;">
+                    <p class="text-center mt-2 p-3" data-lang="wherewefocus-ai-text">We are actively investing in AI
+                        applications that redefine industry workflows and in blockchain platforms.</p>
+                </div>
+                <div class="col-12 col-md-4 p-3 d-flex flex-column align-items-center">
+                    <img src="public/assets/Wwf1.png" class="img-fluid rounded" alt="Special Situations"
+                        style="width: 250px !important; height: 250px !important;">
+                    <p class="text-center mt-2 p-3" data-lang="wherewefocus-special-text">We also pursue special
+                        situations that arise from regional dislocations or strategic carve-outs.</p>
+                </div>
+                <div class="col-12 col-md-4 p-3 d-flex flex-column align-items-center">
+                    <img src="public/assets/ev.png" class="img-fluid rounded" alt="Energy Transition Support"
+                        style="width: 250px !important; height: 250px !important;">
+                    <p class="text-center mt-2 p-3" data-lang="wherewefocus-ev-text">In energy transition, we have
+                        supported legacy infrastructure in evolving toward EV-ready ecosystems.</p>
+                </div>
+                <div class="col-12 col-md-4 p-3 d-flex flex-column align-items-center">
+                    <img src="public/assets/Wwf3.png" class="img-fluid rounded" alt="ESG Innovation"
+                        style="width: 250px !important; height: 250px !important;">
+                    <p class="text-center mt-2 p-3" data-lang="wherewefocus-esg-text">Across all these areas, we
+                        prioritise innovation that advances ESG goals and real-world impact.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section id="wherewefocus" class="content" style="margin-top: -60px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-section">
+                    <h2 style="font-weight: 500 !important;" data-lang="wherewefocus-title">Where we focus</h2>
+                    <!-- <h2>Where we focus</h2> -->
+                    <p style="max-width: 90%;margin-bottom: 30px; margin-top: 30px !important;"
+                        data-lang="wherewefocus-text">Our investments reflect our commitment to future-oriented sectors
+                        and technologies. In energy transition, we have supported legacy infrastructure in evolving
+                        toward EV-ready, clean-powered ecosystems. In consumer markets, we focus on platforms that
+                        promote digital lifestyle, health, and personal empowerment. We are actively investing in AI
+                        applications that redefine industry workflows and in blockchain platforms that enable secure,
+                        scalable, and transparent transactions. We also pursue special situations that arise from
+                        regional dislocations or strategic carve-outs. Across all these areas, we prioritise innovation
+                        that advances ESG goals and real-world impact. </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center d-flex justify-content-center">
+                    <img src="./public/assets/change1.jpg" alt="Full Width Image" class="custom-image-hero my-2 ">
+                </div>
+
+                <!-- <div class="col-lg-12 text-center d-flex justify-content-center">
+                    <img src="./public/assets/wt-ve-look-for.webp" alt="Full Width Image" class="custom-image-hero my-2"
+                        style="max-width: 100%; height: 500px;">
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="ourportfolio" class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 flex-column order-md-1">
+                    <h2 class="text-center text-md-start" data-lang="ourportfolio-title">Our portfolio</h2>
+                    <div class="text-dark text-center text-md-start">
+                        <p class="text-start" data-lang="ourportfolio-text">We construct our portfolio with a balanced
+                            perspective, combining long-term core holdings with selectively timed turnarounds and
+                            strategic bridge investments. Core holdings represent scalable companies with strong
+                            leadership and a clear growth trajectory. Turnaround investments allow us to apply hands-on
+                            guidance for immediate performance improvement. Strategic bridges, meanwhile, help us unlock
+                            access to emerging sectors or complementary partners. In every case, we assess not only
+                            financial return but also each company’s contribution to inclusive and sustainable growth.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <img src="public/assets/Portfolio-img.jpg" alt="Agile and Purposeful"
+                        class="img-fluid rounded mb-3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content p-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="feature-card h-100">
+                        <img src="./public/assets/change2.jpg" class="card-img-top" alt="Invideo AI">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3"></div>
+                            <h2 class="mb-3" data-lang="ournetwork-title">Our Network</h2>
+                            <p data-lang="ournetwork-text">Hong Hui combines regional knowledge with global
+                                institutional access. Our network spans financial institutions, sovereign funds, family
+                                offices, and corporate investors, enabling high-quality deal flow, accelerated value
+                                creation, and facilitated exits while upholding ESG integration and governance best
+                                practices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card h-100">
+                        <img src="./public/assets/nwedge.jpg" class="card-img-top" alt="No-code Agents">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3"></div>
+                            <h2 class="mb-3" data-lang="ouredge-title">Our Edge</h2>
+                            <p data-lang="ouredge-text">Operating from Hong Kong, we sit at the nexus of China’s
+                                industrial capabilities, Southeast Asia’s demographic growth, and global capital flows.
+                                Our global perspective, paired with local insight, enables effective navigation of
+                                complex cross-border investments, building resilient, future-ready businesses.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partnerwithus" class="content">
+        <div class="highlight-card">
+            <h2 data-lang="partnerwithus-title">Partner with us</h2>
+            <p class="px-3 text-center" data-lang="partnerwithus-text">We welcome engagement with founders, asset
+                owners, and investors who share our belief in strategic capital as a force for transformation. Whether
+                you seek partnership, growth capital, or co-investment opportunities, Hong Hui Ventures Capital is ready
+                to collaborate, driving financial return, operational excellence, and sustainable impact.</p>
+        </div>
+    </section>
+
+
+    <section id="joinus" class="content">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-dark" style="font-weight: 500;" data-lang="joinus-title">Contact Us</h2>
+                <!-- <p class="text-muted" style="max-width: 600px; margin: 0 auto; color: #000000 !important;"
+                    data-lang="joinus-text">
+                    Whether you're a founder, investor, or partner—reach out to explore opportunities with Hong Hui
+                    Ventures Capital Ltd.
+                </p> -->
+            </div>
+            <!-- action="https://formspree.io/f/xpwleypq" method="POST"-->
+            <form class="join-form" onsubmit="sendMail(event)" >
+                <div class="form-group">
+                    <label for="name" data-lang="joinus-name-label">Full Name<span>*</span></label>
+                    <input type="text" id="name" name="name" required data-lang="joinus-name-placeholder"
+                        placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email" data-lang="joinus-email-label">Email<span>*</span></label>
+                    <input type="email" id="email" name="email" required data-lang="joinus-email-placeholder"
+                        placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-lang="joinus-phone-label">Phone<span>*</span></label>
+                    <input type="tel" id="phone" name="phone" required data-lang="joinus-phone-placeholder"
+                        placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="message" data-lang="joinus-message-label">Message<span>*</span></label>
+                    <textarea id="message" name="message" rows="4" required data-lang="joinus-message-placeholder"
+                        placeholder="Write your message..."></textarea>
+                </div>
+                <div class="form-group text-center mt-4">
+                    <button type="submit" class="submit-btn" data-lang="joinus-submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- <script>
+        (() => {
+            const form = document.querySelector('.join-form');
+            form.addEventListener('submit', function (e) {
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    alert("Please fill in all required fields correctly.");
+                }
+            });
+        })();
+    </script>
+
+<form class="join-form" onsubmit="sendMail(event)">
+    <div class="form-group">
+        <label for="name">Full Name<span>*</span></label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email<span>*</span></label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone<span>*</span></label>
+        <input type="tel" id="phone" name="phone" required>
+    </div>
+    <div class="form-group">
+        <label for="message">Message<span>*</span></label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+    </div>
+    <div class="form-group text-center mt-4">
+        <button type="submit" class="submit-btn">Submit</button>
+    </div>
+</form> -->
+
+<script>
+async function sendMail(e) {
+    e.preventDefault();
+
+    const form = e.target; // this is the form
+    const data = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value,
+    };
+
+    // console.log("📤 Sending data:", data); // debug
+
+    const response = await fetch("/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    });
+
+    const result = await response.text();
+    alert(result);
+
+    // reset form
+    form.reset();
+}
+</script>
+
+
+    <footer class="footer content mt-5 ps-4" style="margin-top: 100px !important;">
+        <div class="container">
+            <div class="row"></div>
+            <div class="row">
+                <div class="col-md-3 ">
+                    <h5 data-lang="footer-contact-title">Contact </h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="mailto:contact@honghuicapital.com" class="text-decoration-none"
+                                data-lang="footer-email">enquiry@honghuicapital.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 data-lang="footer-support-title">Support</h5>
+                    <ul>
+                        <li><a data-lang="footer-faq">FAQ</a></li>
+                        <li><a href="#joinus" data-lang="footer-contact">Contact Us</a></li>
+                        <!-- <li><a href="#" data-lang="footer-help">Help Center</a></li> -->
+                        <!-- <li><a href="#" data-lang="footer-tutorials">Tutorials</a></li> -->
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 data-lang="footer-community-title">Community</h5>
+                    <ul>
+                        <!-- <li><a href="#" data-lang="footer-forums">Forums</a></li> -->
+                        <li><a data-lang="footer-events">Events</a></li>
+                        <!-- <li><a href="#" data-lang="footer-webinars">Webinars</a></li> -->
+                        <li><a data-lang="footer-newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 data-lang="footer-terms-title">Terms & Policies</h5>
+                    <ul>
+                        <!-- <li><a href="#" data-lang="footer-forums">Forums</a></li> -->
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal"
+                                data-lang="footer-terms-of-use">Terms of Use</a></li>
+                        <!-- <li><a href="#" data-lang="footer-webinars">Webinars</a></li> -->
+                        <li><a data-lang="footer-privacy-policy">Privacy Policy</a></li>
+                        <li><a data-lang="footer-other-policies">Other Policies</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4"></div>
+            </div>
+            <div class="footer-bottom row align-items-center">
+                <div class="col-md-6 social-icons">
+                    <a href="#"><i class="fs-5 fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <p class="mb-0 pe-5 text-end" data-lang="footer-copyright">© 2025 Hong Hui Ventures Capital Ltd.</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <section id="disclaimer" class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 order-md-1" style="width: 90%;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="text-lg-start py-2" data-lang="disclaimer-title">Disclaimer</h5>
+                    </div>
+                    <div class="text-dark text-start text-sm-start">
+                        <p id="disclaimerText" class="text-start" data-lang="disclaimer-text">This material has been
+                            prepared by Hong Hui Ventures Capital Ltd and is provided for informational purposes only.
+                            It does not constitute investment advice, a recommendation, an offer, or a solicitation to
+                            buy or sell any securities or to adopt any investment strategy. The content herein should
+                            not be relied upon as a forecast or research, and no representation is made regarding the
+                            accuracy or completeness of the information. Any opinions expressed reflect the judgment of
+                            Hong Hui Ventures Capital Ltd as of the date of publication and are subject to change
+                            without notice. The information may include forward-looking statements, projections, or
+                            forecasts, which are inherently uncertain and may not materialize. Past performance is not
+                            indicative of future results. No warranty of accuracy or reliability is given, and Hong Hui
+                            Ventures Capital Ltd, its affiliates, officers, or agents accept no responsibility for any
+                            loss or damage arising from the use of or reliance on this material, whether due to
+                            negligence or otherwise. In Hong Kong, this content has not been reviewed by the Securities
+                            and Futures Commission and is not intended for distribution to, or use by, any person or
+                            entity in any jurisdiction where such distribution or use would be contrary to local law or
+                            regulation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Disclaimer Modal -->
+    <div class="modal fade" id="disclaimerModal" tabindex="-1" aria-labelledby="disclaimerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="disclaimerModalLabel" data-lang="disclaimer-title">
+                        Disclaimer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="disclaimerModalText" data-lang="disclaimer-text">This material has been prepared by Hong Hui
+                        Ventures Capital Ltd and is provided for informational purposes only. It does not constitute
+                        investment advice, a recommendation, an offer, or a solicitation to buy or sell any securities
+                        or to adopt any investment strategy. The content herein should not be relied upon as a forecast
+                        or research, and no representation is made regarding the accuracy or completeness of the
+                        information. Any opinions expressed reflect the judgment of Hong Hui Ventures Capital Ltd as of
+                        the date of publication and are subject to change without notice. The information may include
+                        forward-looking statements, projections, or forecasts, which are inherently uncertain and may
+                        not materialize. Past performance is not indicative of future results. No warranty of accuracy
+                        or reliability is given, and Hong Hui Ventures Capital Ltd, its affiliates, officers, or agents
+                        accept no responsibility for any loss or damage arising from the use of or reliance on this
+                        material, whether due to negligence or otherwise. In Hong Kong, this content has not been
+                        reviewed by the Securities and Futures Commission and is not intended for distribution to, or
+                        use by, any person or entity in any jurisdiction where such distribution or use would be
+                        contrary to local law or regulation.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        data-lang="modal-close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const languageData = {
+            english: {
+                'logo': './public/assets/hero-logo.png',
+                'hero-img-text': 'Preparing for a <br> new global economy',
+                'main-title': 'About',
+                'title': 'Hong Hui Ventures Capital Ltd',
+                'nav-who-we-are': 'Who we are',
+                'nav-what-we-look-for': 'What we look for',
+                'nav-where-we-focus': 'Where we focus',
+                'nav-our-portfolio': 'Our portfolio',
+                'nav-partner-with-us': 'Partner with us',
+                'login-button': 'Log in',
+                'hero-text': 'Hong Hui Ventures Capital',
+                'whoweare-title': 'Who we are',
+                'whoweare-text': 'Hong Hui Ventures Capital Ltd is a Hong Kong, China-based investment firm committed to identifying and scaling high- potential businesses with unrealised value.We specialise in deploying strategic capital, operational expertise, and cross- border connectivity to transform companies and deliver sustainable, long - term returns. Our investment strategy spans both growth and special situation opportunities across Greater China, Southeast Asia,and select international markets, guided by a rigorous institutional approach and a deep understanding of structural inefficiencies.',
+                'howwethink-title': 'How we think',
+                'howwethink-core-title': 'Core Approach',
+                'howwethink-core-text': 'Our investment philosophy centres on a disciplined, value-driven approach, complemented by active engagement and long-term vision.',
+                'howwethink-criteria-title': 'Investment Criteria',
+                'howwethink-criteria-text': 'We seek businesses that are either undervalued, under-managed, or positioned for transition. Each investment is assessed based on itspotential for creating meaningful value, the clarity of its exit pathway, and its alignmentwith global sustainability goals.',
+                'howwethink-strategy-title': 'Execution Strategy',
+                'howwethink-strategy-text': 'We invest with purpose, combining agility with conviction to act decisively when opportunities emerge. ',
+                'whatwelookfor-title': 'What we look for',
+                'whatwelookfor-text': 'We focus on companies that are well-positioned to benefit from structural growth trends, such as the clean energy transition, digital innovation, and evolving consumer behaviours. Many of our targets face challenges related to ownership misalignment, succession gaps, or constrained capital structures. Others may be ready for public listing but lack the investor exposure or governance standards to proceed. Across all cases, we seek businesses that, with the proper support, can contribute to a more sustainable and inclusive economy.',
+                'creatingimpact-title': 'Creating Impact',
+                'creatingimpact-text': 'Our model is built on partnership and action. We deliver more than capital by offering a comprehensive framework that addresses the financial, strategic, and operational dimensions of growth. This includes restructuring capital to unlock liquidity, realigning business models to sharpen competitive positioning, and integrating digital or clean technologies to enhance efficiency. Equally important, we embed environmental, social, and governance (ESG) principles into each engagement to drive long-term, responsible performance.',
+                'wherewefocus-title': 'Where we focus',
+                'wherewefocus-text': 'Our investments reflect our commitment to future-oriented sectors and technologies. In energy transition, we have supported legacy infrastructure in evolving toward EV-ready, clean-powered ecosystems. In consumer markets, we focus on platforms that promote digital lifestyle, health, and personal empowerment. We are actively investing in AI applications that redefine industry workflows and in blockchain platforms that enable secure, scalable, and transparent transactions. We also pursue special situations that arise from regional dislocations or strategic carve-outs. Across all these areas, we prioritise innovation that advances ESG goals and real-world impact. ',
+                'wherewefocus-energy-text': 'Our recent investments reflect our commitment to future-oriented sectors and technologies.',
+                'wherewefocus-consumer-text': 'In consumer markets, we focus on platforms that promote digital lifestyle, health, and personal empowerment.',
+                'wherewefocus-ai-text': 'We are actively investing in AI applications that redefine industry workflows and in blockchain platforms.',
+                'wherewefocus-special-text': 'We also pursue special situations that arise from regional dislocations or strategic carve-outs.',
+                'wherewefocus-ev-text': 'In energy transition, we have supported legacy infrastructure in evolving toward EV-ready ecosystems.',
+                'wherewefocus-esg-text': 'Across all these areas, we prioritise innovation that advances ESG goals and real-world impact.',
+                'ourportfolio-title': 'Our portfolio',
+                'ourportfolio-text': 'We construct our portfolio with a balanced perspective, combining long-term core holdings with selectively timed turnarounds and strategic bridge investments. Core holdings represent scalable companies with strong leadership and a clear growth trajectory. Turnaround investments allow us to apply hands-on guidance for immediate performance improvement. Strategic bridges, meanwhile, help us unlock access to emerging sectors or complementary partners. In every case, we assess not only financial return but also each company’s contribution to inclusive and sustainable growth.',
+                'ournetwork-title': 'Our Network',
+                'ournetwork-text': 'Hong Hui combines regional knowledge with global institutional access. Our network spans financial institutions, sovereign funds, family offices, and corporate investors, enabling high-quality deal flow, accelerated value creation, and facilitated exits while upholding ESG integration and governance best practices.',
+                'ouredge-title': 'Our Edge',
+                'ouredge-text': 'Operating from Hong Kong, we sit at the nexus of China’s industrial capabilities, Southeast Asia’s demographic growth, and global capital flows. Our global perspective, paired with local insight, enables effective navigation of complex cross-border investments, building resilient, future-ready businesses.',
+                'partnerwithus-title': 'Partner with us',
+                'partnerwithus-text': 'We welcome engagement with founders, asset owners, and investors who share our belief in strategic capital as a force for transformation. Whether you seek partnership, growth capital, or co-investment opportunities, Hong Hui Ventures Capital is ready to collaborate, driving financial return, operational excellence, and sustainable impact.',
+                'joinus-title': 'Contact Us',
+                'joinus-text': 'Whether you\'re a founder, investor, or partner—reach out to explore opportunities with Hong Hui Ventures Capital Ltd.',
+                'joinus-name-label': 'Full Name',
+                'joinus-email-label': 'Email',
+                'joinus-phone-label': 'Phone',
+                'joinus-message-label': 'Message',
+                'joinus-name-placeholder': 'Enter your full name',
+                'joinus-email-placeholder': 'Enter your email',
+                'joinus-phone-placeholder': 'Enter your phone number',
+                'joinus-message-placeholder': 'Write your message...',
+                'joinus-submit': 'Submit',
+                'joinus-error': 'Please fill in all required fields correctly.',
+                'footer-contact-title': 'Contact',
+                'footer-email': 'enquiry@honghuicapital.com',
+                'footer-support-title': 'Support',
+                'footer-faq': 'FAQ',
+                'footer-contact': 'Contact Us',
+                'footer-help': 'Help Center',
+                'footer-tutorials': 'Tutorials',
+                'footer-community-title': 'Community',
+                'footer-forums': 'Forums',
+                'footer-events': 'Events',
+                'footer-webinars': 'Webinars',
+                'footer-newsletter': 'Newsletter',
+                'footer-terms-title': 'Terms & Policies',
+                'footer-terms-of-use': 'Terms of Use',
+                'footer-privacy-policy': 'Privacy Policy',
+                'footer-other-policies': 'Other Policies',
+                'footer-copyright': '© 2025 Hong Hui Ventures Capital Ltd.',
+                'disclaimer-title': 'Disclaimer',
+                'disclaimer-text': 'This material has been prepared by Hong Hui Ventures Capital Ltd and is provided for informational purposes only. It does not constitute investment advice, a recommendation, an offer, or a solicitation to buy or sell any securities or to adopt any investment strategy. The content herein should not be relied upon as a forecast or research, and no representation is made regarding the accuracy or completeness of the information. Any opinions expressed reflect the judgment of Hong Hui Ventures Capital Ltd as of the date of publication and are subject to change without notice. The information may include forward-looking statements, projections, or forecasts, which are inherently uncertain and may not materialize. Past performance is not indicative of future results. No warranty of accuracy or reliability is given, and Hong Hui Ventures Capital Ltd, its affiliates, officers, or agents accept no responsibility for any loss or damage arising from the use of or reliance on this material, whether due to negligence or otherwise. In Hong Kong, this content has not been reviewed by the Securities and Futures Commission and is not intended for distribution to, or use by, any person or entity in any jurisdiction where such distribution or use would be contrary to local law or regulation.',
+                'language-button': 'English',
+                'modal-close': 'Close',
+                'language-buttons': 'Login'
+            },
+            "chinese": {
+                'logo': './public/assets/HH LOGO CH.png',
+                "hero-img-text": "<span class=\"chinese-slogan\">為新全球經濟做好準備</span>",
+                "main-title": "關於我們",
+                "title": "泓匯資本",
+                "nav-who-we-are": "關於我們",
+                "nav-what-we-look-for": "投資標的 ",
+                "nav-where-we-focus": "重點領域",
+                "nav-our-portfolio": "投資組合策略 ",
+                "nav-partner-with-us": "與我們合作",
+                "login-button": "登录",
+                "hero-text": "泓匯資本",
+                "whoweare-title": "關於我們",
+                "whoweare-text": "泓匯資本是一家位於中國香港的的投資機構，致力於發掘具有潛力但尚未完全釋放價值的 企業。我們專注於提供策略性資金、營運專業知識與跨境聯繫，以推動企 轉型，實現可 持續的長期回報。投資策略涵蓋大中華區、東南亞以及部分全球市場的成 與特殊情況機 會，並以嚴謹的機構化方法為指導。",
+                "howwethink-title": "我們的理念",
+                "howwethink-core-title": "核心方法",
+                "howwethink-core-text": "我們的投資理念建立在紀律嚴謹與價值導向的基礎上，並結合積極參與與長期願景。",
+                "howwethink-criteria-title": "投資標準",
+                "howwethink-criteria-text": "我們尋找那些估值偏低、管理不善或正處於轉型階段的企業。每一項投資都需具備明確的價值創造潛力、清晰的退出路徑，以及符合全球永續發展目標特質。",
+                "howwethink-strategy-title": "執行策略",
+                "howwethink-strategy-text": "我們以果斷靈活的方式出擊，投資於具有遠見的機會。",
+                "whatwelookfor-title": "投資標的",
+                "whatwelookfor-text": "我們關注那些受惠於結構性成長趨勢的企業，例如潔淨能源轉型、數位創新與新興消費模式。許多投資標的面臨擁有權錯配、接班難題或資本結構受限的困境。亦些企業具備上市潛力，卻欠缺投資人關注或治理水準不足。我們專注於透過策略性支持協助這些企業為經濟可持續與包容性發展做出貢獻。",
+                "creatingimpact-title": "創造價值 ",
+                "creatingimpact-text": "我們的模式以夥伴關係與實質行動為基礎。我們提供的不只是資金，更是一套全方位的價 值創造框架，涵蓋財務結構、營運策略與技術整合。我們協助重整資本、 化營運模式， 並導入數位與潔淨科技，以提升效率與規模。同時，我們將環境、社會與 司治理 （ESG）原則融入每一項投資，推動負責任的長期成長。 ",
+                "wherewefocus-title": "重點領域",
+                "wherewefocus-text": "我們的投資集中於未來導向的產業與技術。在能源轉型方面，我們協助傳統基礎設施升級 為支援電動車的潔淨能源體系；在消費市場上，我們投資於數位生活、健康與個人化體驗 的新型平台。我們積極參與人工智慧應用與區塊鏈技術的擴展，也尋求因地區錯位或策略 重組而產生的特殊情況機會。所有領域皆優先考慮能促進ESG目標與實際影響的創新。",
+                "wherewefocus-energy-text": "我们最近的投资反映了我们对面向未来行业和技术的承诺。",
+                "wherewefocus-consumer-text": "在消费市场，我们专注于促进数字生活方式、健康和个人赋能的平台。",
+                "wherewefocus-ai-text": "我们积极投资于重新定义行业工作流程的人工智能应用和区块链平台。",
+                "wherewefocus-special-text": "我们也追求因区域错位或战略剥离而产生的特殊情况。",
+                "wherewefocus-ev-text": "在能源转型方面，我们支持传统基础设施向电动车就绪生态系统演变。",
+                "wherewefocus-esg-text": "在所有这些领域，我们优先考虑推动ESG目标和现实世界影响的创新。",
+                "ourportfolio-title": "投資組合策略 ",
+                "ourportfolio-text": "我們的投資組合結構講求平衡，結合長期核心持股、策略性重整機會與開拓市場的橋接型 投資。核心持股聚焦於具備領導力與明確成長路徑的企業；重整型投資則 過我們的參與 快速提升企業績效；橋接型投資則有助於進入新興產業或建立策略性夥伴 係。我們不僅 衡量財務回報，也重視企業對包容性與永續發展的貢獻。",
+                "ournetwork-title": "投資組合策略 ",
+                "ournetwork-text": "我們的投資組合結構講求平衡，結合長期核心持股、策略性重整機會與開拓市場的橋接型 投資。核心持股聚焦於具備領導力與明確成長路徑的企業；重整型投資則 過我們的參與 快速提升企業績效；橋接型投資則有助於進入新興產業或建立策略性夥伴 係。我們不僅 衡量財務回報，也重視企業對包容性與永續發展的貢獻。",
+                "ouredge-title": "全球視野，本地行動",
+                "ouredge-text": "以香港為基地，我們坐擁中國工業實力、東南亞人口紅利與全球資本流動的交匯點。國際 視野結合本地洞察，使我們能有效推動跨境投資，建立具備韌性與未來導 的企業。",
+                "partnerwithus-title": "與我們合作 ",
+                "partnerwithus-text": "我們歡迎企業創辦人、資產持有人與潛在合作投資者與我們接洽。無論是策略性夥伴關 係、成長資金需求或共同投資機會，泓匯資本皆致力於創造財務回報、營 卓越與永續影 響。",
+                "joinus-title": "聯絡我們",
+                "joinus-text": "无论您是创始人、投资者还是合作伙伴——请联系我们，探索与宏辉创投有限公司合作的机会。",
+                "joinus-name-label": "全名",
+                "joinus-email-label": "電子郵件",
+                "joinus-phone-label": "電話",
+                "joinus-message-label": "訊息",
+                "joinus-name-placeholder": "輸入您的全名",
+                "joinus-email-placeholder": "輸入您的電子郵件",
+                "joinus-phone-placeholder": "輸入您的電話號碼",
+                "joinus-message-placeholder": "請輸入您的訊息...",
+                "joinus-submit": "提交",
+                "joinus-error": "请正确填写所有必填字段。",
+                "footer-contact-title": "聯絡方式",
+                "footer-email": "enquiry@honghuicapital.com",
+                "footer-support-title": "支援",
+                "footer-faq": "常見問題",
+                "footer-contact": "聯絡我們",
+                "footer-help": "帮助中心",
+                "footer-tutorials": "教程",
+                "footer-community-title": "社群",
+                "footer-forums": "论坛",
+                "footer-events": "活動",
+                "footer-webinars": "网络研讨会",
+                "footer-newsletter": "電子報",
+                "footer-terms-title": "條款與政策",
+                "footer-terms-of-use": "使用條款",
+                "footer-privacy-policy": "隱私政策",
+                "footer-other-policies": "其他政策",
+                "footer-copyright": "@2025 泓匯資本投資有限公司",
+                "disclaimer-title": "免责声明",
+                "disclaimer-text": "本材料由宏辉创投有限公司准备，仅供信息参考之用，不构成投资建议、推荐、要约或诱导购买或出售任何证券或采取任何投资策略。本材料内容不应视为预测或研究，也不保证信息的准确性或完整性。所表达的任何意见反映宏辉创投有限公司截至出版日期的判断，且可能随时更改，恕不另行通知。本材料可能包含前瞻性陈述、预测或展望，这些内容具有固有的不确定性，可能无法实现。过去的表现不代表未来的结果。宏辉创投有限公司、其关联公司、管理人员或代理人不保证信息的准确性或可靠性，对于因使用或依赖本材料而导致的任何损失或损害（无论是否由于疏忽）不承担任何责任。在香港，本内容未经证券及期货事务监察委员会审阅，不得在任何分发或使用违反当地法律或法规的司法管辖区内向任何人或实体分发或使用。",
+                "language-button": "English",
+                "modal-close": "关闭",
+                "language-buttons": "登录",
+            },
+        };
+
+        const languageDropdown = document.getElementById('languageDropdown');
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        let currentLanguage = 'english';
+
+        function updateLanguage(lang) {
+            // Save the language choice
+            localStorage.setItem("preferredLanguage", lang);
+
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = languageData[lang][key] || element.placeholder;
+                } else {
+                    element.innerHTML = languageData[lang][key] || element.innerHTML;
+                }
+            });
+
+            // Update logo image
+            const logo = document.querySelector('.logo-cont');
+            if (logo) {
+                logo.src = languageData[lang]['logo'] || logo.src;
+                logo.alt = lang === 'english' ? 'English Logo' : 'Chinese Logo';
+            }
+
+            // Update dropdown text
+            languageDropdown.textContent =
+                lang === 'english'
+                    ? 'English'
+                    : lang === 'chinese'
+                        ? '繁體中文'
+                        : '日本語';
+
+            currentLanguage = lang;
+
+            // Update <html lang="...">
+            document.documentElement.lang =
+                lang === 'english'
+                    ? 'en'
+                    : lang === 'chinese'
+                        ? 'zh'
+                        : 'ja';
+        }
+
+        // ✅ On page load, restore saved language
+        window.addEventListener("DOMContentLoaded", () => {
+            const savedLang = localStorage.getItem("preferredLanguage") || "english";
+            updateLanguage(savedLang);
+        });
+
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = e.target.getAttribute('data-lang');
+                updateLanguage(lang);
+            });
+        });
+
+        function toggleSidebar() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('open');
+        }
+
+        function handleClick(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                }
+            });
+            if (window.innerWidth <= 991) {
+                toggleSidebar();
+            }
+        }
+
+        // Form validation
+        const form = document.querySelector('.join-form');
+        form.addEventListener('submit', function (e) {
+            if (!form.checkValidity()) {
+                e.preventDefault();
+                e.stopPropagation();
+                alert(languageData[currentLanguage]['joinus-error']);
+            }
+        });
+
+        // Initialize with English
+        // updateLanguage('english');
+    </script>
+
+    <script>
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
+    <script>
+        window.onload = function () {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
+        };
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
