@@ -1527,6 +1527,47 @@
         </div>
     </section>
 
+    <script>
+    async function sendMail(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value,
+    };
+
+    const response = await fetch("/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    });
+
+    const result = await response.text();
+   Toastify({
+    text: result,
+    duration: 3000,
+    gravity: "top",
+    position: "right",
+    backgroundColor: "#ffffff",
+    style: {
+        color: "#000000",
+        borderRadius: "10px",
+        boxShadow: "0 4px 8px rgba(0,0,0,0.2)"
+    }
+}).showToast();
+
+    form.reset();
+}
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  
+
     <!-- <script>
         (() => {
             const form = document.querySelector('.join-form');
@@ -1562,33 +1603,7 @@
     </div>
 </form> -->
 
-<script>
-async function sendMail(e) {
-    e.preventDefault();
 
-    const form = e.target; // this is the form
-    const data = {
-        name: form.name.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        message: form.message.value,
-    };
-
-    // console.log("📤 Sending data:", data); // debug
-
-    const response = await fetch("/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-    });
-
-    const result = await response.text();
-    alert(result);
-
-    // reset form
-    form.reset();
-}
-</script>
 
 
     <footer class="footer content mt-5 ps-4" style="margin-top: 100px !important;">
@@ -1981,6 +1996,8 @@ async function sendMail(e) {
     <script>
         AOS.init();
     </script>
+
+    
 
 </body>
 

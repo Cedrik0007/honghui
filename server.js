@@ -37,7 +37,7 @@ app.post("/send-email", async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.send("✅ Message sent successfully!");
+    res.send("The form has been Submitted Successfully");
   } catch (error) {
     console.error("Email error:", error);
     res.status(500).send("❌ Failed to send message.");
