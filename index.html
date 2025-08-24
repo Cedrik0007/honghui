@@ -1527,44 +1527,71 @@
         </div>
     </section>
 
-    <script>
+<script>
     async function sendMail(e) {
-    e.preventDefault();
+        e.preventDefault();
 
-    const form = e.target;
-    const data = {
-        name: form.name.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        message: form.message.value,
-    };
+        const form = e.target;
+        const data = {
+            name: form.name.value,
+            email: form.email.value,
+            phone: form.phone.value,
+            message: form.message.value,
+        };
 
-    const response = await fetch("/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-    });
+        const response = await fetch("/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
 
-    const result = await response.text();
-   Toastify({
-    text: result,
-    duration: 3000,
-    gravity: "top",
-    position: "right",
-    backgroundColor: "#ffffff",
-    style: {
-        color: "#000000",
-        borderRadius: "10px",
-        boxShadow: "0 4px 8px rgba(0,0,0,0.2)"
+        const result = await response.text();
+
+        // Create success card
+        const successCard = document.createElement("div");
+        successCard.style.position = "fixed";
+        successCard.style.top = "50%";
+        successCard.style.left = "50%";
+        successCard.style.transform = "translate(-50%, -50%)";
+        successCard.style.backgroundColor = "#ffffff";
+        successCard.style.padding = "2rem";
+        successCard.style.borderRadius = "10px";
+        successCard.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+        successCard.style.textAlign = "center";
+        successCard.style.zIndex = "1000";
+
+        successCard.innerHTML = `
+            <svg style="color: white; width: 48px;padding:5px; height: 48px;background-color:green;border-radius:50%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            <h2 style="margin: 1rem 0; color: #000000;">Thank You!</h2>
+            <p style="color: #000000;">Your form has been successfully submitted.</p>
+        `;
+
+        document.body.appendChild(successCard);
+
+        // Remove card after 3 seconds
+        setTimeout(() => {
+            successCard.remove();
+        }, 3000);
+
+        form.reset();
     }
-}).showToast();
+</script>
 
-    form.reset();
-}
-    </script>
+<style>
+    /* Optional: Add fade animation */
+    div {
+        animation: fadeInOut 3s ease-in-out;
+    }
 
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+</style>
 
   
 
