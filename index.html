@@ -1530,6 +1530,8 @@
 <script>
     async function sendMail(e) {
         e.preventDefault();
+        e.stopPropagation();
+
 
         const form = e.target;
         const data = {
